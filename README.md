@@ -22,18 +22,11 @@ HelpFlow 是一个面向中小企业客服场景的虚构 SaaS 产品。我独�
 
 ## 核心架构
 
-```mermaid
-flowchart LR
-    U["用户输入"] --> R["FAQ Router<br/>判断最相关 FAQ"]
-    R --> L["FAQ Lookup<br/>读取确定规则"]
-    L --> A["Answer LLM<br/>生成自然、安全的回答"]
-    A --> O["最终回复"]
-    M["Memory / 多轮上下文"] -.-> R
-    M -.-> A
-    K["28 条结构化 FAQ"] --> L
-```
+![HelpFlow 系统架构图](assets/helpflow-architecture.png)
 
-对于 28 条固定 FAQ，Router + Lookup 能把“选哪条规则”和“如何表达”分开，便于控制知识边界并定位责任层。详细说明见 [系统架构](docs/02-architecture.md)。
+对于 28 条固定 FAQ，Router + Lookup 能把“选哪条规则”和“如何表达”分开，便于控制知识边界并定位责任层。
+
+详细说明见 [系统架构](docs/02-architecture.md)。
 
 ## 我做了什么
 
